@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:focusable="true">
+
+        <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/details_fab"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="@dimen/details_margin"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/start_guideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="@dimen/details_margin" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/end_guideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="@dimen/details_margin" />
+
+                <View
+                    android:id="@+id/top_background"
+                    android:layout_width="0dp"
+                    android:layout_height="280dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/beer_details_image"
+                    android:layout_width="200dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="@dimen/details_margin"
+                    android:contentDescription="@null"
+                    app:layout_constraintBottom_toBottomOf="@+id/top_background"
+                    app:layout_constraintStart_toStartOf="@id/top_background"
+                    app:layout_constraintTop_toBottomOf="@id/top_background"
+                    app:layout_constraintTop_toTopOf="@id/top_background" />
+
+                <TextView
+                    android:id="@+id/beer_details_abv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/abv_name"
+                    android:textSize="24sp"
+                    app:layout_constraintBottom_toTopOf="@+id/beer_details_abv_value"
+                    app:layout_constraintEnd_toStartOf="@+id/beer_details_ibu_title"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toEndOf="@+id/beer_details_image" />
+
+                <TextView
+                    android:id="@+id/beer_details_abv_value"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:maxLines="1"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/top_background"
+                    app:layout_constraintEnd_toStartOf="@id/beer_details_ibu_title"
+                    app:layout_constraintStart_toStartOf="@+id/beer_details_abv_title" />
+
+                <TextView
+                    android:id="@+id/beer_details_ibu_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/ibu_name"
+                    android:textSize="24sp"
+                    app:layout_constraintBottom_toTopOf="@+id/beer_details_ibu_value"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/beer_details_abv_title" />
+
+                <TextView
+                    android:id="@+id/beer_details_ibu_value"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:maxLines="1"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/top_background"
+                    app:layout_constraintStart_toStartOf="@+id/beer_details_ibu_title" />
+
+                <TextView
+                    android:id="@+id/beer_details_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/details_margin"
+                    android:textColor="@color/colorNumber"
+                    android:textSize="24sp"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/beer_details_image"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/beer_details_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toTopOf="@+id/beer_details_abv_title"
+                    app:layout_constraintStart_toEndOf="@+id/beer_details_image" />
+
+                <TextView
+                    android:id="@+id/beer_details_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/details_margin"
+                    android:textSize="40sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@id/end_guideline"
+                    app:layout_constraintStart_toStartOf="@id/start_guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/top_background" />
+
+                <TextView
+                    android:id="@+id/beer_details_tagline"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="34sp"
+                    app:layout_constraintEnd_toEndOf="@id/end_guideline"
+                    app:layout_constraintStart_toStartOf="@id/start_guideline"
+                    app:layout_constraintTop_toBottomOf="@id/beer_details_name" />
+
+                <TextView
+                    android:id="@+id/beer_details_description"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="@dimen/details_margin"
+                    android:textSize="22sp"
+                    app:layout_constraintEnd_toEndOf="@id/end_guideline"
+                    app:layout_constraintStart_toStartOf="@id/start_guideline"
+                    app:layout_constraintTop_toBottomOf="@id/beer_details_tagline" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <TextView
+            android:id="@+id/details_error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:gravity="center"
+            android:text="@string/no_results"
+            android:textSize="24sp"
+            android:visibility="gone" />
+
+    </FrameLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
